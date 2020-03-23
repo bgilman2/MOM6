@@ -144,7 +144,7 @@ subroutine open_param_file(filename, CS, checkable, component, doc_file_dir)
     if (iounit /= -1) then
       do i = 1, CS%nfiles
         if (CS%iounit(i) == iounit) then
-          if (trim(CS%filename(1)) /= trim(filename)) then
+          if (trim(CS%filename(i)) /= trim(filename)) then
             call MOM_error(FATAL, &
               "open_param_file: internal inconsistency! "//trim(filename)// &
               " is registered as open but has the wrong unit number!")
@@ -233,6 +233,7 @@ subroutine open_param_file(filename, CS, checkable, component, doc_file_dir)
   endif
   call doc_init(doc_path, CS%doc, minimal=CS%minimal_doc, complete=CS%complete_doc, &
                 layout=CS%complete_doc, debugging=CS%complete_doc)
+  close(UNIT=iounit, STATUS='keep',IOSTAT=ios)
 
 end subroutine open_param_file
 

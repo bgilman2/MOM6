@@ -822,7 +822,7 @@ subroutine open_doc_file(doc)
     endif
     inquire(doc%unitAll, opened=opened)
     if ((.not.opened) .or. (ios /= 0)) then
-      call MOM_error(FATAL, "Failed to open doc file "//trim(fileName)//".")
+      !call MOM_error(FATAL, "Failed to open doc file "//trim(fileName)//".")
     endif
     doc%filesAreOpen = .true.
   endif
@@ -843,7 +843,7 @@ subroutine open_doc_file(doc)
     endif
     inquire(doc%unitShort, opened=opened)
     if ((.not.opened) .or. (ios /= 0)) then
-      call MOM_error(FATAL, "Failed to open doc file "//trim(fileName)//".")
+      !call MOM_error(FATAL, "Failed to open doc file "//trim(fileName)//".")
     endif
     doc%filesAreOpen = .true.
   endif
@@ -864,7 +864,7 @@ subroutine open_doc_file(doc)
     endif
     inquire(doc%unitLayout, opened=opened)
     if ((.not.opened) .or. (ios /= 0)) then
-      call MOM_error(FATAL, "Failed to open doc file "//trim(fileName)//".")
+      !call MOM_error(FATAL, "Failed to open doc file "//trim(fileName)//".")
     endif
     doc%filesAreOpen = .true.
   endif
@@ -885,7 +885,7 @@ subroutine open_doc_file(doc)
     endif
     inquire(doc%unitDebugging, opened=opened)
     if ((.not.opened) .or. (ios /= 0)) then
-      call MOM_error(FATAL, "Failed to open doc file "//trim(fileName)//".")
+      !call MOM_error(FATAL, "Failed to open doc file "//trim(fileName)//".")
     endif
     doc%filesAreOpen = .true.
   endif
